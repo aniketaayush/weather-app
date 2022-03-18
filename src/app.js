@@ -3,6 +3,9 @@ const express = require("express");
 const hbs = require("hbs");
 const app = express();
 
+//Constants
+const port = process.env.port || 3000
+
 //Weather API Files
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
@@ -75,6 +78,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server started successfully at port 3000");
 });
